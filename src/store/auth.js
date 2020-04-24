@@ -1,4 +1,5 @@
 import firebase from '@/firebase';
+import db from '@/db.js';
 /* eslint-disable */
 
 const state = {
@@ -19,12 +20,14 @@ const actions = {
 	async login({commit}) {
 	  const provider = new firebase.auth.GoogleAuthProvider();
 	  const { user } = await firebase.auth().signInWithPopup(provider);
-      commit('setUser', {
+      const setUser = {
       	id: user.uid,
       	name: user.displayName,
       	image: user.photoURL,
       	created_at: firebase.firestore.FieldValue.serverTimestamp(),
-      })
+      }
+      db.collection('users').doc(setUser.id).set(setUser)
+      commit('setUser', setUser)
 	},
 };
 

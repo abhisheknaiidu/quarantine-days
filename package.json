@@ -12,6 +12,7 @@
   "dependencies": {
     "buefy": "^0.8.16",
     "core-js": "^3.6.4",
+    "eslint-loader": "^4.0.0",
     "firebase": "^7.14.2",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
@@ -29,7 +30,7 @@
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-eslint": "^10.1.0",
     "chromedriver": "^80.0.1",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
     "geckodriver": "^1.19.1",
