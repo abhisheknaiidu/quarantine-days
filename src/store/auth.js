@@ -1,5 +1,4 @@
 import firebase from '@/firebase';
-import db from '@/db.js';
 /* eslint-disable */
 
 const state = {
@@ -8,26 +7,25 @@ const state = {
 };
 
 const mutations = {
-	setUser(state, user) {
-		console.log(user)
-		state.user = user;
-		state.isLoggedIn = true;
-	}
+   setUser(state, user) {
+    if (user) {
+      state.user = user;
+      state.isLoggedIn = true;
+    } else {
+      state.user = {};
+      state.isLoggedIn = false;
+    }
+  },
 };
 // actions can only be async in nature 
 // Mutations and stae, getters are not allowed to be async
 const actions = {
-	async login({commit}) {
+	async login() {
 	  const provider = new firebase.auth.GoogleAuthProvider();
-	  const { user } = await firebase.auth().signInWithPopup(provider);
-      const setUser = {
-      	id: user.uid,
-      	name: user.displayName,
-      	image: user.photoURL,
-      	created_at: firebase.firestore.FieldValue.serverTimestamp(),
-      }
-      db.collection('users').doc(setUser.id).set(setUser)
-      commit('setUser', setUser)
+	  await firebase.auth().signInWithPopup(provider);
+	},
+	async logout() {
+	 await firebase.auth().signOut();
 	},
 };
 
