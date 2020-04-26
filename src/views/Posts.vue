@@ -1,5 +1,6 @@
 <template>
-<h1> Abhishek </h1>
+<h1> {{posts}} </h1>
+
 </template>
 
 <script>
@@ -9,7 +10,7 @@ export default {
   mounted() {
     this.init();
   },
-  computed: mapState('subreddits', ['subreddits']),
-  methods: mapActions('subreddits', ['init']),
+  computed: mapState('posts', ['posts']),
+  methods: mapActions('posts', ['init']),
 };
 </script>
