@@ -2,12 +2,12 @@ import { firebaseAction } from 'vuexfire';
 import db from '@/db';
 
 const state = {
-  posts: [],
+  subreddits: [],
 };
 
 const actions = {
   init: firebaseAction(({ bindFirebaseRef }) => {
-    bindFirebaseRef('posts', db.collection('posts'));
+    bindFirebaseRef('subreddits', db.collection('subreddits'));
   }),
 };
 
