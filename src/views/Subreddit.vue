@@ -1,6 +1,6 @@
  <template>
      <section>
-     <h1> {{ $route.params.name }} </h1>
+     <h1> {{ subreddit.name }} </h1>
       <form>
        <b-field label="Title">
           <b-input
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   data: () => ({
@@ -35,9 +35,19 @@ export default {
     },
   }),
   mounted() {
-    // this.init();
+    this.initSubreddit(this.$route.params.name);
   },
-  computed: mapState('subreddits', ['subreddits']),
-  methods: mapActions('subreddits', ['init']),
+  computed: {
+    ...mapState('subreddit', ['posts']),
+    ...mapGetters('subreddit', ['subreddit']),
+  },
+  methods: {
+    ...mapActions('subreddit', ['createPost', 'initSubreddit', 'initPost']),
+    async onCreatePost() {
+      if (this.post.title && (this.post.description || this.post.URL)) {
+        await this.createPost(this.post);
+      }
+    },
+  },
 };
 </script>
