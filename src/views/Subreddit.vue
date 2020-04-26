@@ -1,7 +1,7 @@
  <template>
      <section>
      <h1> {{ subreddit.name }} </h1>
-      <form>
+      <form @submit.prevent="onCreatePost()">
        <b-field label="Title">
           <b-input
           v-model="post.title"
