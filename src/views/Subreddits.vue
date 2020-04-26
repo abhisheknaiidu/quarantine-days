@@ -1,6 +1,14 @@
 <template>
-<pre> {{subreddits}} </pre>
-
+  <aside class="menu">
+    <p class="menu-label">
+      General
+    </p>
+    <ul class="menu-list">
+      <li v-for="subreddit in subreddits" :key="subreddit.id">
+      <a> {{ subreddit.name }} </a>
+      </li>
+    </ul>
+  </aside>
 </template>
 
 <script>
