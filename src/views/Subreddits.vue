@@ -5,7 +5,10 @@
     </p>
     <ul class="menu-list">
       <li v-for="subreddit in subreddits" :key="subreddit.id">
-      <a> {{ subreddit.name }} </a>
+      <router-link
+          :to="{ name: 'subreddit', params: { name: subreddit.name } }">
+          {{subreddit.name}}
+        </router-link>
       </li>
     </ul>
   </aside>
