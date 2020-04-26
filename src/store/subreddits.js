@@ -1,4 +1,4 @@
-import { firebaseAction } from 'vuexfire';
+import { firestoreAction } from 'vuexfire';
 import db from '@/db';
 
 const state = {
@@ -6,8 +6,8 @@ const state = {
 };
 
 const actions = {
-  init: firebaseAction(({ bindFirebaseRef }) => {
-    bindFirebaseRef('subreddits', db.collection('subreddits'));
+  init: firestoreAction(({ bindFirestoreRef }) => {
+    bindFirestoreRef('subreddits', db.collection('subreddits'));
   }),
 };
 

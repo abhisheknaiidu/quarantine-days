@@ -8,12 +8,12 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home,
   },
   {
     path: '/subreddits',
-    name: 'Subreddits',
+    name: 'subreddits',
     component: Subreddits,
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

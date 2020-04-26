@@ -1,5 +1,5 @@
 <template>
-<h1> {{subreddits}} </h1>
+<pre> {{subreddits}} </pre>
 
 </template>
 
