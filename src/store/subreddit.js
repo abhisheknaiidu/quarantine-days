@@ -32,7 +32,7 @@ const actions = {
   initSubreddit: firestoreAction(({ bindFirestoreRef }, name) => {
     bindFirestoreRef('subreddits', db.collection('subreddits').where('name', '==', name));
   }),
-  initPost: firestoreAction(({ bindFirestoreRef }, subreddit_id) => {
+  initPosts: firestoreAction(({ bindFirestoreRef }, subreddit_id) => {
     bindFirestoreRef('posts', posts.where('subreddit_id', '==', subreddit_id));
   }),
 };

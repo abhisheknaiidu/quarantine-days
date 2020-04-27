@@ -37,12 +37,24 @@ export default {
   mounted() {
     this.initSubreddit(this.$route.params.name);
   },
+  // if anything changes in the URL with just typing instead of selecting the options.
+  /* eslint-disable */
+  watch: {
+    '$route.params.name'() {
+      this.initSubreddit(this.$route.params.name);
+    },
+    subreddit() {
+      if (this.subreddit.id) {
+        this.initPosts(this.subreddit.id);
+      }
+    },
+  },
   computed: {
     ...mapState('subreddit', ['posts']),
     ...mapGetters('subreddit', ['subreddit']),
   },
   methods: {
-    ...mapActions('subreddit', ['createPost', 'initSubreddit', 'initPost']),
+    ...mapActions('subreddit', ['createPost', 'initSubreddit', 'initPosts']),
     async onCreatePost() {
       if (this.post.title && (this.post.description || this.post.URL)) {
         await this.createPost(this.post);
