@@ -1,4 +1,4 @@
-# quarantine-days
+# Quarantine-days
 
 ## Project setup
 ```
