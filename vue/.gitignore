@@ -2,14 +2,11 @@
 node_modules
 /dist
 
-/tests/e2e/reports/
-selenium-debug.log
-chromedriver.log
-geckodriver.log
-
 # local env files
 .env.local
 .env.*.local
+.env
+.env.build
 
 # Log files
 npm-debug.log*
@@ -24,5 +21,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-.now
