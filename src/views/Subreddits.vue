@@ -1,13 +1,17 @@
 <template>
-  <aside class="menu">
+  <aside class="menu topics">
     <p class="menu-label">
-      General
+      Topics
     </p>
     <ul class="menu-list">
       <li v-for="subreddit in subreddits" :key="subreddit.id">
       <router-link
           :to="{ name: 'subreddit', params: { name: subreddit.name } }">
+          <button class="post">
           {{subreddit.name}}
+          </button>
+          <br>
+          <br>
         </router-link>
       </li>
     </ul>
@@ -25,3 +29,18 @@ export default {
   methods: mapActions('subreddits', ['init']),
 };
 </script>
+
+<style>
+@import '../styles/button.css';
+
+.menu-label {
+  margin-left: 30px;
+}
+
+@media (max-width: 768px) {
+.topics {
+  margin-left: 2rem;
+}
+}
+
+</style>

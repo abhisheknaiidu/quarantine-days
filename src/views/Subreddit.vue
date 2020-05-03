@@ -2,10 +2,11 @@
      <section>
      <button
         @click="showForm = !showForm"
-        class="button is-primary">
-        Toggle Form
+        class="post">
+        ADD POST
       </button>
       <form
+        class="post-form"
         v-if="showForm"
         @submit.prevent="onCreatePost()">
        <b-field label="Title">
@@ -24,7 +25,7 @@
                type="url">
       </b-input>
       </b-field>
-    <button class="button is-success">Add Post</button>
+    <button class="button post">Submit</button>
     </form>
     <div class="posts columns is-multiline is-4">
           <div class="column is-4"
@@ -109,6 +110,12 @@ export default {
     async onCreatePost() {
       if (this.post.title && (this.post.description || this.post.URL)) {
         await this.createPost(this.post);
+        this.post = {
+          title: '',
+          description: '',
+          URL: '',
+        };
+        this.showForm = false;
       }
     },
   },
@@ -116,6 +123,7 @@ export default {
 </script>
 
 <style>
+@import '../styles/button.css';
 
 .posts {
    margin-top: 2em;
@@ -128,5 +136,9 @@ export default {
 .card img {
    border-radius: 5px;
     }
+
+.post-form {
+  margin-top: 3rem;
+}
 
 </style>
