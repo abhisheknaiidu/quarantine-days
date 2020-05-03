@@ -44,9 +44,11 @@ export default {
 
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 html, body {
   height:100%;
-
+  font-family: 'Special Elite', cursive;
 }
 #app {
      width: 100%;
