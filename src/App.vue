@@ -3,9 +3,8 @@
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="/#/subreddits">
-          Quarantine-Days 🌱
+          Quarantine-Days  <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/241/face-with-medical-mask_1f637.png"/>
         </a>
-
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
@@ -45,6 +44,25 @@ export default {
 
 
 <style lang="scss">
+html, body {
+  height:100%;
+
+}
+#app {
+     width: 100%;
+     height: 100%;
+     background-color: #fff;
+     -webkit-animation: random 5s infinite;
+     animation: random 5s infinite;
+}
+@keyframes  random {
+    15% { background-color: #b6d468; }
+    30% { background-color: #fd8b8e; }
+    45% { background-color: #c74ae6; }
+    60% { background-color: #b51e3b; }
+    75% { background-color: #4c4433; }
+}
+
 .main {
   margin-top: 2em;
 }
