@@ -84,6 +84,7 @@ export default {
     },
   }),
   mounted() {
+    this.initUsers();
     this.initSubreddit(this.$route.params.name);
   },
   // if anything changes in the URL with just typing instead of selecting the options.
@@ -100,13 +101,17 @@ export default {
   },
   computed: {
     ...mapState('subreddit', ['posts']),
-    ...mapGetters('subreddit', ['subreddit']),
+    ...mapGetters({
+      subreddit: 'subreddit/subreddit',
+      userById: 'users/usersById',
+    }),
   },
   methods: {
     isImage(url) {
       return url.match(/(png|jpg|jpeg|gif)$/);
     },
     ...mapActions('subreddit', ['createPost', 'initSubreddit', 'initPosts']),
+        ...mapActions('users', { initUsers: 'init' }),
     async onCreatePost() {
       if (this.post.title && (this.post.description || this.post.URL)) {
         await this.createPost(this.post);

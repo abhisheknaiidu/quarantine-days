@@ -10,7 +10,7 @@
         <div class="navbar-item">
           <div class="field is-grouped">
             <p class="control" v-if="!isLoggedIn">
-              <a class="button login" @click="login()">
+              <a class="button is-danger is-light login" @click="login()">
                 Login with Google
               </a>
             </p>
@@ -23,7 +23,7 @@
                   <img :src="user.image">
                   </div>
                   <div  class="logout">
-                   <a class="button is-primary" @click="logout()">
+                   <a class="button is-danger is-light" @click="logout()">
                 LogOut
               </a>
               </div>
