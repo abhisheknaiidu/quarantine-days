@@ -4,8 +4,8 @@ import db from '@/db';
 const state = {
   users: [],
 };
-
-// Turn the array into object where ID's are the key 
+/* eslint-disable */
+// Turn the array into object where ID's are the key
 // and the user names are the values in it.
 const getters = {
 // creating an object where the properties are the ID's
@@ -16,7 +16,7 @@ const getters = {
       return byId;
     }, {});
   },
-}
+};
 
 const actions = {
   init: firestoreAction(({ bindFirestoreRef }) => {
@@ -28,4 +28,5 @@ export default {
   namespaced: true,
   state,
   actions,
+  getters,
 };
