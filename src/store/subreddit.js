@@ -29,6 +29,10 @@ const actions = {
       console.error(error);
     }
   },
+  // _ refers to nothing
+  async deletePost(_, post_id) {
+    await posts.doc(post_id).delete();
+  },
   initSubreddit: firestoreAction(({ bindFirestoreRef }, name) => {
     bindFirestoreRef('subreddits', db.collection('subreddits').where('name', '==', name));
   }),

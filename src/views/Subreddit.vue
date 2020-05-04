@@ -35,7 +35,7 @@
       </form>
     <div class="posts columns is-multiline is-4">
           <div class="column is-4"
-              v-for="post in posts"
+              v-for="(post, index) in filteredPosts"
               :key="post.id">
               <div class="card">
                   <div class="card-image"
@@ -67,6 +67,14 @@
                       <div class="content">
                           {{post.description}}
                           <br>
+                          <time>{{getCreated(index)}}</time>
+                          <br>
+                          <button
+                            @click="deletePost(post.id)"
+                            v-if="user && user.id == post.user_id"
+                            class="button is-danger">
+                            Delete Post
+                          </button>
                           <!-- <router-link
                             :to="{
                               name: 'post',
@@ -90,6 +98,7 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 export default {
   data: () => ({
     showForm: false,
+    searchTerm: '',
     post: {
       title: '',
       description: '',
@@ -119,6 +128,14 @@ export default {
       subreddit: 'subreddit/subreddit',
       usersById: 'users/usersById',
     }),
+    filteredPosts() {
+      if (this.searchTerm) {
+        const regexp = new RegExp(this.searchTerm, 'gi');
+        return this.posts.filter(post =>
+          (post.title + post.description).match(regexp));
+      }
+      return this.posts;
+    },
     loadedUsersById() {
     // because posts have the user informations
     // grabbing users-by-id and get the post
@@ -135,7 +152,7 @@ export default {
     isImage(url) {
       return url.match(/(png|jpg|jpeg|gif)$/);
     },
-    ...mapActions('subreddit', ['createPost', 'initSubreddit', 'initPosts']),
+    ...mapActions('subreddit', ['createPost', 'initSubreddit', 'initPosts', 'deletePost']),
         ...mapActions('users', { initUsers: 'init' }),
     async onCreatePost() {
       if (this.post.title && (this.post.description || this.post.URL)) {
@@ -148,12 +165,45 @@ export default {
         this.showForm = false;
       }
     },
+    getCreated(index) {
+      function timeSince(date) {
+        const seconds = Math.floor((new Date() - date) / 1000);
+        let interval = Math.floor(seconds / 31536000);
+        if (interval > 1) {
+          return `${interval} years`;
+        }
+        interval = Math.floor(seconds / 2592000);
+        if (interval > 1) {
+          return `${interval} months`;
+        }
+        interval = Math.floor(seconds / 86400);
+        if (interval > 1) {
+          return `${interval} days`;
+        }
+        interval = Math.floor(seconds / 3600);
+        if (interval > 1) {
+          return `${interval} hours`;
+        }
+        interval = Math.floor(seconds / 60);
+        if (interval > 1) {
+          return `${interval} minutes`;
+        }
+        return `${Math.floor(seconds)} seconds`;
+      }
+      return timeSince(this.posts[index].created_at.seconds * 1000) < 0 ?
+        '0 seconds ago' :
+        `${timeSince(this.posts[index].created_at.seconds * 1000)} ago`;
+    },
   },
 };
 </script>
 
 <style>
 @import '../styles/button.css';
+
+.search-form {
+  margin-top: 2em;
+    }
 
 .posts {
    margin-top: 2em;

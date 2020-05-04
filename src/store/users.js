@@ -20,7 +20,9 @@ const getters = {
 
 const actions = {
   init: firestoreAction(({ bindFirestoreRef }) => {
-    bindFirestoreRef('users', db.collection('users'));
+    setTimeout(() => {
+      bindFirestoreRef('users', db.collection('users'));
+    }, 4000);
   }),
 };
 

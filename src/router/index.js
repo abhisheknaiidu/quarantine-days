@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Subreddits from '../views/Subreddits.vue';
 import Subreddit from '../views/Subreddit.vue';
+import Post from '../views/Post.vue';
 
 Vue.use(VueRouter);
 
@@ -21,9 +22,14 @@ const routes = [
     // which is lazy-loaded when the route is visited.
   },
   {
-    path: '/r/:name',
+    path: '/q/:name',
     name: 'subreddit',
     component: Subreddit,
+  },
+  {
+    path: '/q/:name/:post_id',
+    name: 'post',
+    component: Post,
   },
 ];
 
