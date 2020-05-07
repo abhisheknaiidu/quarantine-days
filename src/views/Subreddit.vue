@@ -248,14 +248,15 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
    margin-left: 2rem;
    margin-right: 2rem;
   }
-  
+
   .search-form {
    margin-left: 2rem;
+   margin-right: 2rem;
   }
 
   .card {
     flex-direction: column;
-    widht: 70%;
+    width: 70%;
   }
 }
 
