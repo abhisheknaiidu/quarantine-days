@@ -3,7 +3,7 @@
      <button
         v-if="isLoggedIn"
         @click="showForm = !showForm"
-        class="post">
+        class="post add-post">
         ADD POST
       </button>
       <form
@@ -208,17 +208,55 @@ export default {
 .posts {
    margin-top: 2em;
     }
+
 .card {
-   height: 100%;
-   margin: 1%;
-   border-radius: 5px;
-    }
-.card img {
-   border-radius: 5px;
-    }
+  margin: 30px auto;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card-image {
+  border-radius: 40px;
+}
+
+.card .card-image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
 
 .post-form {
   margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .add-post {
+  margin-left: 1.5rem;
+  }
+
+  .post-form {
+   margin-left: 2rem;
+   margin-right: 2rem;
+  }
+  
+  .search-form {
+   margin-left: 2rem;
+  }
+
+  .card {
+    flex-direction: column;
+    widht: 70%;
+  }
 }
 
 </style>
