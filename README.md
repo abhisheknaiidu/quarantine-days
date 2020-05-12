@@ -1,10 +1,24 @@
-# Quarantine-days
+# Quarantine Days
 
 ### A Vue-based Web Interface, Built during Quarantine Days
 
 ### Tech Stack : 
 
 ![screenshot](vue-plus-firebase.png)
+
+### Dependencies :
+
+*  `vue: ^2.6.11`
+*  `vue-router: ^3.1.6`
+*  `vuex: ^3.1.3`
+*  `vuexfire: ^3.2.2`
+*  `@buefy: ^0.8.16`
+*  `@core-js: ^3.6.4`
+*  `eslint-loader: ^4.0.0`
+*  `firebase: ^7.14.2`
+*  `now: ^18.0.0`
+*  `pattern.css: ^1.0.0`
+    
 
 ## Project setup
 ```
