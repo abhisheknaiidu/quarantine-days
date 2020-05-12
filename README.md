@@ -30,12 +30,14 @@ Check it out at https://quarantine-days.now.sh/
 
 ![Screenshot](topics.png)
 
+
 ```diff
 + SUB-TOPIC PAGE :
 
 ```
 
 ![Screenshot](sub-topic.png)
+
 
 ```diff
 + ADD POST PAGE :
