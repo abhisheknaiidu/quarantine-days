@@ -1,5 +1,11 @@
 # Quarantine-days
 
+### A Vue-based Web Interface, Built during Quarantine Days
+
+### Tech Stack : 
+
+![screenshot](vue-plus-firebase.png)
+
 ## Project setup
 ```
 npm install
