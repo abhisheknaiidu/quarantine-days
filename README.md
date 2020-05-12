@@ -2,6 +2,8 @@
 
 ### A Vue-based Web Interface, Built during Quarantine Days
 
+Check it out at https://quarantine-days.now.sh/
+
 ### Tech Stack : 
 
 ![screenshot](vue-plus-firebase.png)
@@ -18,7 +20,30 @@
 *  `firebase: ^7.14.2`
 *  `now: ^18.0.0`
 *  `pattern.css: ^1.0.0`
-    
+  
+### Screenshots :
+
+```diff
++ HOME PAGE :
+
+```
+
+![Screenshot](topics.png)
+
+```diff
++ SUB-TOPIC PAGE :
+
+```
+
+![Screenshot](sub-topic.png)
+
+```diff
++ ADD POST PAGE :
+
+```
+
+![Screenshot](add-post.png)
+
 
 ## Project setup
 ```
