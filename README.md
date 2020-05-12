@@ -1,6 +1,6 @@
 # Quarantine Days
 
-### A Vue-based Web Interface, Built during Quarantine Days
+### A Vue-Firebase-based Web Interface, Built during Quarantine Days
 
 Check it out at https://quarantine-days.now.sh/
 
