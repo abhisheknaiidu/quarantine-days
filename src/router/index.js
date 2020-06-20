@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 import Subreddits from '../views/Subreddits.vue';
 import Subreddit from '../views/Subreddit.vue';
 import Post from '../views/Post.vue';
@@ -10,8 +9,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
+    name: 'subreddits',
+    component: Subreddits,
   },
   {
     path: '/subreddits',
