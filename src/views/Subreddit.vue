@@ -215,7 +215,6 @@ export default {
   box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
   cursor: pointer;
   transition: 0.4s;
-  transition: 0.4s;
   display: flex;
   flex-direction: column;
   height: 100%;
