@@ -82,7 +82,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 License
 =======
-    Copyright 2013 Mir Ikram Uddin
+    Copyright 2020 Abhishek Naidu B
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
